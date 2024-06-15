@@ -1,9 +1,11 @@
+import 'server-only'
 import { getAttendeesCountForDashboard } from '@/utils/attendees'
 import { getCurrentUser } from '@/utils/users'
 
 const Home = async () => {
   const user = await getCurrentUser()
   const count = await getAttendeesCountForDashboard(user.id)
+  console.log('home page')
   return (
     <div className="w-full flex h-full justify-center items-center">
       <div>
